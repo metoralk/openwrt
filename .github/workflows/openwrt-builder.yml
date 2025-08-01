@@ -123,7 +123,7 @@ jobs:
         run: |
           echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
           touch release.txt
-          # ✅ 移除未定义的 UPLOAD_GOFILE 检查
+          # 移除未定义的 UPLOAD_GOFILE 检查（原代码逻辑不完整）
           # [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
           echo "status=success" >> $GITHUB_OUTPUT
 
