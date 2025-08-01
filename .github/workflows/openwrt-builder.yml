@@ -137,17 +137,11 @@ jobs:
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
 
-      - name: Delete workflow runs
-        uses: dev-drprasad/delete-older-releases@v0.2.0  # ✅ 明确版本 v1
-        with:
-          retain_days: 0
-          keep_minimum_runs: 2
-
-      - name: Remove old Releases
-        uses: actions/delete-old-releases@v0.1.0  # ✅ 替代方案（官方 Action）
+      - name: Delete old Releases
+        uses: dev-drprasad/delete-older-releases@v0.2.0
         if: env.UPLOAD_RELEASE == 'true' && !cancelled()
         with:
-          keep_latest: 3
-          delete_tags: true
+          keep_latest: 3       # 保留最新 3 个 Release
+          delete_tags: true    # 连标签一块删
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
