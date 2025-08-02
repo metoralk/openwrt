@@ -1,32 +1,11 @@
-# ====== 官方源（必须） ======
-src-git base https://github.com/openwrt/openwrt.git
-src-git packages https://github.com/openwrt/packages.git
-src-git luci https://github.com/openwrt/luci.git
-src-git routing https://github.com/openwrt-routing/packages.git
-src-git telephony https://github.com/openwrt/telephony.git
-
-# ====== 第三方源（补充插件） ======
-# 1. filebrowser-go（如果官方源没有）
-src-git filebrowser-go https://github.com/project-openwrt/filebrowser-go.git
-
-# 2. accesscontrol-plus（访问控制增强）
-src-git accesscontrol-plus https://github.com/destan19/OpenWrt-packages.git;subdir=accesscontrol-plus
-
-# 3. diskman（磁盘管理）
-src-git diskman https://github.com/SuLingGG/luci-app-diskman.git
-
-# 4. samba4（Samba 4 文件共享）
-src-git samba4 https://github.com/openwrt/packages.git;subdir=net/samba4
-
-# 5. ttyd（Web 终端）
-src-git ttyd https://github.com/zhaojh329/luci-app-ttyd.git
-
-# 6. turboacc（加速插件）
-src-git turboacc https://github.com/kenzok8/openwrt-packages.git;subdir=turboacc
-
-# 7. wrtbwmon（流量监控）
-src-git wrtbwmon https://github.com/sirpdboy/luci-app-wrtbwmon.git
-
-# 8. docker（容器支持）
-src-git docker https://github.com/lisaac/luci-app-docker.git
-src-git docker-ce https://github.com/openwrt/packages.git;subdir=base/docker-ce
+src-git packages https://github.com/coolsnowwolf/packages
+#src-git luci https://github.com/coolsnowwolf/luci
+src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05
+src-git routing https://github.com/coolsnowwolf/routing
+src-git telephony https://github.com/coolsnowwolf/telephony.git
+#src-git helloworld https://github.com/fw876/helloworld.git
+#src-git oui https://github.com/zhaojh329/oui.git
+#src-git video https://github.com/openwrt/video.git
+#src-git targets https://github.com/openwrt/targets.git
+#src-git oldpackages http://git.openwrt.org/packages.git
+#src-link custom /usr/src/openwrt/custom-feed
