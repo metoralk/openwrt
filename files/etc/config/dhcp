@@ -1,1 +1,97 @@
 
+config dnsmasq
+	option domainneeded '1'
+	option localise_queries '1'
+	option rebind_protection '0'
+	option local '/lan/'
+	option domain 'lan'
+	option expandhosts '1'
+	option authoritative '1'
+	option readethers '1'
+	option leasefile '/tmp/dhcp.leases'
+	option localservice '0'
+	option ednspacket_max '1232'
+	option port '53'
+	option allservers '1'
+	option min_ttl '3600'
+	option dnsforwardmax '10000'
+	option localuse '1'
+	option cachesize '0'
+	option dns_redirect '1'
+	option noresolv '1'
+	list server '127.0.0.1#7874'
+
+config dhcp 'lan'
+	option interface 'lan'
+	option start '66'
+	option limit '66'
+	option leasetime '12h'
+	option dhcpv4 'server'
+	option dhcpv6 'hybrid'
+	option ra 'hybrid'
+	list ra_flags 'managed-config'
+	list ra_flags 'other-config'
+	option force '1'
+	option ndp 'hybrid'
+
+config dhcp 'wan'
+	option interface 'wan'
+	option ignore '1'
+
+config odhcpd 'odhcpd'
+	option maindhcp '0'
+	option leasefile '/tmp/hosts/odhcpd'
+	option leasetrigger '/usr/sbin/odhcpd-update'
+	option loglevel '4'
+
+config domain '_sc_pw'
+	option name 'pw'
+	option ip '10.0.0.1'
+	option comments 'PassWall'
+
+config domain '_ta'
+	option name 'time.android.com'
+	option ip '203.107.6.88'
+	option comments 'time.android'
+
+config domain 'default_server'
+	option name 'cneupa/'
+	option ip '192.168.99.1'
+	option comments '后台地址'
+
+config host
+	list mac '50:88:11:BE:43:50'
+	option ip '192.168.99.90'
+
+config host
+	list mac '50:4F:3B:3E:2C:E4'
+	option ip '192.168.99.91'
+
+config host
+	list mac 'CC:D8:43:71:3A:20'
+	option ip '192.168.99.92'
+
+config host
+	list mac '58:EA:1F:C3:4B:E8'
+	option ip '192.168.99.93'
+
+config host
+	option ip '192.168.99.95'
+	list mac '00:E0:66:9B:36:2E'
+
+config host
+	list mac 'd0:11:e5:a1:76:33'
+	option ip '192.168.99.96'
+
+config host
+	list mac 'E4:E3:3D:95:DE:48'
+	option ip '192.168.99.97'
+
+config host
+	list mac '1C:83:41:31:55:D8'
+	option ip '192.168.99.98'
+
+config host
+	list mac '0C:BD:75:20:C3:DF'
+	option ip '192.168.99.99'
+
